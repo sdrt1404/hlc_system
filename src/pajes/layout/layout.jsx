@@ -1,19 +1,21 @@
 import logoHs from '@/assets/PNG.png'
 import { Link, Outlet } from 'react-router-dom'
 import Button from '@mui/material/Button';
+import { useState } from 'react';
 
 
 
 
 export default function Layout() {
+    const [isOpen, setIsOpen] = useState(false);
 
 
     return (<>
 
 
-        <header className='flex w-[90%] m-auto justify-between items-center  lg:px-[40px] lg:py-[30px]  '>
-            <div className='flex items-center'>
-                <img className='w-[60px]' src={logoHs} alt="" />
+        <header className='flex w-[90%] m-auto justify-between items-center     '>
+            <div className='flex items-center w-[200px]'>
+                <img className='w-[200px]' src={logoHs} alt="" />
                 <div>
                     <h1 className='font-semibold text-[20px]'>Cambridge</h1>
                     <h2>School</h2>
@@ -23,17 +25,58 @@ export default function Layout() {
             <div className='flex gap-[30px]'>
 
 
-            <Link to={'/'}>
-                <h1 className='font-bold text-[30px]'>Home</h1>
-            </Link>
+                <Link to={'/'}>
+                    <h1 className='font-bold text-[30px]'>Home</h1>
+                </Link>
 
-            <Link to={'/debtor'}>
-                <h1 className='font-bold text-[30px]'>Debtor</h1>
-            </Link>
+                <Link to={'/debtor'}>
+                    <h1 className='font-bold text-[30px]'>Debtor</h1>
+                </Link>
             </div>
             <Link to={'/login'}>
-             <Button variant="outlined" size="medium">   Login </Button>
+                <Button variant="outlined" size="medium">   Login </Button>
             </Link>
+
+            <div className="relative ">
+                <button
+                    onClick={() => setIsOpen(!isOpen)}
+                    className="px-4 py-2 bg-blue-600 text-white rounded"
+                >
+                    Открыть панель
+                </button>
+
+                {/* Затемнённый фон */}
+                <div
+                    className={`fixed inset-0 bg-black/50 transition-opacity duration-300 ${isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+                        }`}
+                    onClick={() => setIsOpen(false)}
+                ></div>
+
+                {/* Выезжающая панель */}
+                <div
+                    className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ${isOpen ? 'translate-x-0' : 'translate-x-full'
+                        }`}
+                >
+                    <div className="p-4">
+                        <h2 className="text-lg font-bold">Панель</h2>
+                      
+
+                        <Link to={'/'}>
+                            <h1 className='font-bold text-[30px]'>Home</h1>
+                        </Link>
+
+                        <Link to={'/debtor'}>
+                            <h1 className='font-bold text-[30px]'>Debtor</h1>
+                        </Link>
+                        <button
+                            onClick={() => setIsOpen(false)}
+                            className="mt-4 px-4 py-2 bg-red-500 text-white rounded"
+                        >
+                            Закрыть
+                        </button>
+                    </div>
+                </div>
+            </div>
 
 
         </header>
