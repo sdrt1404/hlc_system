@@ -69,12 +69,15 @@ export default function Layout() {
 
 
 
-                            <Link to={'/home'}>
+                            <Link to={'/'}>
                                 <h1 className='font-bold text-[30px]' onClick={()=>setIsOpen(false)}>Home</h1>
                             </Link>
 
                             <Link to={'/debtor'}>
                                 <h1 className='font-bold text-[30px]' onClick={()=>setIsOpen(false)}>Debtor</h1>
+                            </Link>
+                            <Link to={'/crud'}>
+                            <h1>Crud</h1>
                             </Link>
                         </div>
 

@@ -3,7 +3,7 @@ import React from "react";
 export default function CurrentDate() {
   const today = new Date();
   const options = { year: "numeric", month: "long", day: "numeric" };
-  const formattedDate = today.toLocaleDateString("ru-RU", options);
+ const formattedDate = today.toLocaleDateString("ru-RU", options);
 
   return (
     <div className="flex text-[30px]">

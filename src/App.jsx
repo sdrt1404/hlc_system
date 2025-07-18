@@ -4,6 +4,7 @@ import Login from "./pajes/login/login";
 import Home from "./pajes/home/home";
 import Debtor from "./pajes/debtor/debtor";
 import ProtectedLayout from "./pajes/layout/protectedLyout";
+import Crud from "./pajes/crud/crud";
 
 
 
@@ -18,9 +19,10 @@ export default function App() {
   
   <Routes>
     <Route path="/" element={<Layout/>}>
-      <Route path="home" element={<Home/>}/>
-      <Route index element={<Login/>}/>
+      <Route index  element={<Home/>}/>
+      <Route path="login" element={<Login/>}/>
       <Route path="debtor" element={<Debtor/>}/>
+      <Route path="crud" element={<Crud/>}/>
     </Route>
   </Routes>
 
