@@ -10,6 +10,8 @@ export default function Layout() {
     const [isOpen, setIsOpen] = useState(false);
 
 
+
+
     return (<>
 
 
@@ -21,7 +23,10 @@ export default function Layout() {
                     <h2>School</h2>
                 </div>
             </div>
+        {/* Ду варианти header аст выд=бор за вами */}
 
+
+            {/* 
             <div className='flex gap-[30px]'>
 
 
@@ -35,7 +40,8 @@ export default function Layout() {
             </div>
             <Link to={'/login'}>
                 <Button variant="outlined" size="medium">   Login </Button>
-            </Link>
+            </Link> 
+            */}
 
             <div className="relative ">
                 <button
@@ -57,23 +63,30 @@ export default function Layout() {
                     className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ${isOpen ? 'translate-x-0' : 'translate-x-full'
                         }`}
                 >
-                    <div className="p-4">
-                        <h2 className="text-lg font-bold">Панель</h2>
-                      
+                    <div className="p-4 flex flex-col justify-around  gap-[100px]">
+                        <div>
+                            <h2 className="text-lg font-bold">Панель</h2>
 
-                        <Link to={'/'}>
-                            <h1 className='font-bold text-[30px]'>Home</h1>
-                        </Link>
 
-                        <Link to={'/debtor'}>
-                            <h1 className='font-bold text-[30px]'>Debtor</h1>
-                        </Link>
-                        <button
-                            onClick={() => setIsOpen(false)}
-                            className="mt-4 px-4 py-2 bg-red-500 text-white rounded"
-                        >
-                            Закрыть
-                        </button>
+
+                            <Link to={'/home'}>
+                                <h1 className='font-bold text-[30px]' onClick={()=>setIsOpen(false)}>Home</h1>
+                            </Link>
+
+                            <Link to={'/debtor'}>
+                                <h1 className='font-bold text-[30px]' onClick={()=>setIsOpen(false)}>Debtor</h1>
+                            </Link>
+                        </div>
+
+
+                        <div className='flex flex-col'>
+
+                            <Link to={'/login'}>
+                                <Button variant="outlined" size="medium" onClick={()=>setIsOpen(false)}>   Login </Button>
+                            </Link>
+
+                            <button onClick={() => setIsOpen(false)}  className="mt-4 lg:top-[700px] w-[200px] top-[600px] absolute px-4 py-2 bg-red-500 text-white rounded" >Закрыть  </button>
+                        </div>
                     </div>
                 </div>
             </div>

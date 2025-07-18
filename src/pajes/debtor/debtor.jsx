@@ -75,8 +75,8 @@ export default function Debtor() {
         <section className="w-[90%] m-auto mt-[40px]">
 
     
-            <TableContainer component={Paper}>
-                <Table sx={{ minWidth: 700 }} aria-label="customized table">
+            <TableContainer component={Paper} >
+                <Table sx={{ minWidth: 700 }} className="w-[500px]" aria-label="customized table">
                     <TableHead>
                         <TableRow>
                             <StyledTableCell>№</StyledTableCell>

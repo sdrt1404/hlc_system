@@ -9,24 +9,26 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
 
-
-    let API = "https://685a9abb9f6ef96111571888.mockapi.io/Frontent"
-    let [data, setData] = useState([])
-
-    async function get() {
-        try {
-            let { data } = await axios.get(API)
-            setData(data)
-
-        } catch (error) {
-            console.log(error);
-        }
-    }
+    //Да оянда мезанем и пейча 
 
 
-    useEffect(() => {
-        get()
-    }, [])
+    // let API = "https://685a9abb9f6ef96111571888.mockapi.io/Frontent"
+    // let [data, setData] = useState([])
+
+    // async function get() {
+    //     try {
+    //         let { data } = await axios.get(API)
+    //         setData(data)
+
+    //     } catch (error) {
+    //         console.log(error);
+    //     }
+    // }
+
+
+    // useEffect(() => {
+    //     get()
+    // }, [])
 
 
 
